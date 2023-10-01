@@ -20,10 +20,28 @@ int main(){
 
     double* vetor;
     vetor = criar_vetor(tamanho_vetor);
-
-    printf("O vetor é: \n");
-    printf("Posição    Valor\n");
-    for (int i=0;i<tamanho_vetor;i++){
-        printf("%d       %lf\n",i, vetor[i]);
-    }
+    int sair=0;
+    char operacao;
+    do{
+        printf("\nO vetor é: \n");
+        printf("Posição    Valor\n");
+        for (int i=0;i<tamanho_vetor;i++){
+            printf("%d       %lf\n",i, vetor[i]);
+        }
+        printf("\nPara adicionar um novo elemento digite 'A'.\n");
+        printf("Para remover um elemento digite 'R'.\n");
+        printf("Para sair digite qualquer outra letra.");
+        scanf(" %c", &operacao);
+        switch (operacao){
+        case 'A':
+            adicionar_elemento();
+            break;
+        case 'R':
+            remover_elemento();
+            break;
+        default:
+            sair=1;
+            break;
+        }
+    } while (sair==0);
 }
