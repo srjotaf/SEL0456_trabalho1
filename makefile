@@ -1,10 +1,10 @@
-all: arrays
+all: main
 
-arrays: arrays.o criar_vetor.o adicionar_elemento.o remover_elemento.o
-	gcc -o arrays arrays.o criar_vetor.o adicionar_elemento.o remover_elemento.o
+main: main.o criar_vetor.o adicionar_elemento.o remover_elemento.o
+	gcc -o main main.o criar_vetor.o adicionar_elemento.o remover_elemento.o
 
-arrays.o: arrays.c
-	gcc -c arrays.c
+main.o: main.c
+	gcc -c main.c
 
 criar_vetor.o: criar_vetor.c 
 	gcc -c criar_vetor.c
@@ -16,4 +16,4 @@ remover_elemento.o: remover_elemento.c
 	gcc -c remover_elemento.c
 	
 clean:
-	rm -rf *.o arrays
+	rm -rf *.o main
